@@ -14,7 +14,7 @@ const Login = () => {
   
   const navigate=useNavigate()
   const goToSignUpPage=()=>{
-    navigate('/signup')
+    navigate('/register')
   }
   const loginFormHandler=(e)=>{
     e.preventDefault()

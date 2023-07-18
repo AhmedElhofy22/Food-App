@@ -1,30 +1,30 @@
 import React , {Fragment, useState} from 'react'
-import Login from '../Login/Login'
+import { useNavigate } from "react-router-dom";
+import './Welcome.css'
 
 const Welcome = (props) => {
-  const[signIn,setSignIn]=useState(false)
-  const signInHandler = ()=> setSignIn(true)
+  const navigate=useNavigate()
+  const goToLoginPage=()=>{
+    navigate('/login')
+  }
   return (
-    <Fragment>
-      <div>
-         <button onClick={signInHandler}>Sign In</button>
-      </div>
-      {signIn ? (<Login/>) : (
+    <div className='welcome'>
+      
         <Fragment>
-        <div>
+        <div className='welcome__page'/>
+        <div className='welcome__content'>
         <h1>Welcome to our Cafe and Restaurant.</h1>
         <h2>Are you ready for this experience?</h2>
         <h3>Great food with fresh drinks waiting for you.</h3>
       </div>
-      <div>
-        <img src='https://media.architecturaldigest.com/photos/5e5e78b26fb065000842ba95/master/w_1600%2Cc_limit/Main-Dining-Room-2.jpg'
-        alt='Cafe and Restaurant'/>
+      </Fragment>  
+      <div className='welcome__button'>
+        <button type='button' onClick={goToLoginPage} className='welcome__getStarted'>GET STARTED</button>
       </div>
-      </Fragment>
-      )}
       
       
-    </Fragment>
+      
+    </div>
   )
 }
 
