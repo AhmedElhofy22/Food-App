@@ -8,10 +8,12 @@ import Login from './Components/Login/Login';
 import Meals from './Components/Meals/Meals';
 import Welcome from './Components/Welcome/Welcome';
 import CartContextProvider from './Store/CartContext';
+import SignUp from './Components/Login/Signup';
 
 const router = createBrowserRouter([
   {path: '/', element: <Welcome/> },
   {path:'/login', element:<Login/>},
+  {path:'/register',element:<SignUp/>},
   {path:'*', element:<h1>Page Not Found</h1>},
   {
     path:'/home',
